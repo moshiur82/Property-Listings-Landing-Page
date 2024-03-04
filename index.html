@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listings Landing Page</title>
+    <!-- CSS Style Link -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuItems = document.querySelectorAll('#desktop-menu li');
+
+            menuItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    // Remove active class from all menu items
+                    menuItems.forEach(menuItem => menuItem.classList.remove('active'));
+
+                    // Add active class to the clicked menu item
+                    item.classList.add('active');
+                });
+            });
+
+            function toggleMenu() {
+                const overlayMenu = document.getElementById("overlay-menu");
+                const menuIcon = document.querySelector('.menuIcon');
+
+                overlayMenu.classList.toggle("active");
+                menuIcon.classList.toggle('toggle');
+            }
+
+            // Update the onclick attribute in your HTML to use toggleMenu
+            document.querySelector('.menuIcon').onclick = toggleMenu;
+            document.getElementById("overlay-menu").onclick = toggleMenu;
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Navigation Section -->
+    <nav id="navbar">
+        <div class="nav-wrapper">
+            <!-- Navbar Logo -->
+            <div class="logo">
+                <!-- Logo Placeholder for Illustration -->
+                <a href="#home"><img src="images/logo.svg" alt="Logo"></a>
+            </div>
+
+            <!-- Navbar Links -->
+            <div class="nav-links">
+                <ul id="desktop-menu">
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li><a href="#listings">Listings</a></li>
+                    <li><a href="#properties">Properties</a></li>
+                    <li><a href="#aboutus">About Us</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li class="phone">+8801716942391</li>
+                    <button class="button_primary top_button">login</button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Icon -->
+    <div class="menuIcon" onclick="toggleMenu()">
+        <span class="icon icon-bars"></span>
+        <span class="icon icon-bars overlay"></span>
+    </div>
+
+    <!-- Overlay Menu -->
+    <div class="overlay-menu" id="overlay-menu">
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        <ul id="mobile-menu">
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#listings">Listings</a></li>
+            <li><a href="#properties">Properties</a></li>
+            <li><a href="#aboutus">About Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+           
+        </ul>
+    </div>
+
+    <!-- HeroText section -->
+    <section id="Hero_text" class="">
+        <div class="hero_container">
+            <div class="title_text">
+                <h1 class="animation">Explore the Best Rental Properties</h1>
+            </div>
+            <div class="title_paragraph">
+                <p>Discover a wide range of rental properties, from cozy apartments to spacious houses. Find the perfect home that suits your lifestyle and budget, Our intuitive search and filtering system makes finding your ideal rental property a breeze. Filter by location, property type, and price range to narrow down your options</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Filter -->
+    <section id="Property_Filter">
+        <div class="Property_Filter_Container">
+
+            <form class="form-inline" action="/action_page.php">
+                <input type="text" id="text" placeholder="Enter a city or ZIP code" name="text">
+                <label for="Property Type">Property Type</label>
+                <select id="dropdown">
+                    <option value="Apartment">Apartment</option>
+                    <option value="House">House</option>
+                    <option value="Garden3">Garden</option>
+                    <option value="flat">flat</option>
+                  </select>
+                  <label for="Price Range">Price Range</label>
+                  <input type="text" id="text" placeholder="1000" name="text">
+                  <label for="to">to</label>
+                  <input type="text" id="text" placeholder="1500" name="text">
+                  <button class="button_primary">search</button>
+              </form>
+        </div>
+    </section>
+
+
+    <!-- Featured listing -->
+    <section id="Featured_listing">
+        <h2>Featured Listings</h2>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="#">
+      <img src="images/beachfront condos.jpeg" alt="Cinque Terre" width="250" height="145">
+    </a>
+    <div class="desc">Beautiful Apartment in Downtown</div>
+    <p class="price_rate">$1,500/month</p>
+    <button class="button_primary Details">Details</button>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="#">
+      <img src="images/Beautiful Apartment in Downtown.jpeg" alt="Cinque Terre" width="250" height="145">
+    </a>
+    <div class="desc">Beautiful Apartment in Downtown</div>
+    <p class="price_rate">$1,500/month</p>
+    <button class="button_primary Details">Details</button>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="#">
+      <img src="images/cottage House.jpeg" alt="Cinque Terre" width="250" height="145">
+    </a>
+    <div class="desc">Beautiful Apartment in Downtown</div>
+    <p class="price_rate">$1,500/month</p>
+    <button class="button_primary Details">Details</button>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="#">
+      <img src="images/Spacious House with.jpeg" alt="Cinque Terre" width="250" height="145">
+    </a>
+    <div class="desc">Spacious House with a Garden</div>
+    <p class="price_rate">$1,000/month</p>
+    <button class="button_primary Details">Details</button>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="#">
+      <img src="images/house4.jpg" alt="Cinque Terre" width="250" height="145">
+    </a>
+    <div class="desc">Beautiful Apartment in Downtown</div>
+    <p class="price_rate">$800/month</p>
+    <button class="button_primary Details">Details</button>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="#">
+      <img src="images/house5.jpg" alt="Cinque Terre" width="250" height="145">
+    </a>
+    <div class="desc">Beautiful Apartment in Downtown</div>
+    <p class="price_rate">$1,500/month</p>
+    <button class="button_primary Details">Details</button>
+  </div>
+</div>
+
+ </section>
+
+  <!-- Featured listing end -->
+
+   <!-- Refine Search -->
+
+   <section id="Featured_listing">
+    <h2>Refine Your Search</h2>
+    <div class="Property_Filter_Container">
+
+      <form class="form-inline" action="/action_page.php">
+          <label for="Location">Location</label>
+          <input type="text" id="text" placeholder="Any Location" name="text">
+
+          <label for="Price Range">Price Range</label>
+          <select id="dropdown">
+              <option value="Apartment">$0 - $1,000</option>
+              <option value="House">$100 - $2,000</option>
+              <option value="Garden3">$200 - $300</option>
+              <option value="flat">$500 - $900</option>
+            </select>
+
+            <label for="Price Range">Bedroom</label>
+            <select id="dropdown">
+                <option value="Apartment">2 Bedrooms</option>
+                <option value="House">3 Bedrooms</option>
+                <option value="Garden3">4 Bedrooms</option>
+                <option value="flat">5 Bedrooms</option>
+              </select>
+
+              <label for="Price Range">Sort By</label>
+              <select id="dropdown">
+                  <option value="Apartment">Price (Low to High)</option>
+                  <option value="House">Price Low</option>
+                  <option value="Garden3">Price High</option>
+                  <option value="flat">Price Medium</option>
+                </select>
+
+            <button class="button_primary">Apply Filters</button>
+        </form>
+  </div>
+   </section>
+  
+ <!-- Refine Search end -->
+
+
+ <!-- Refine Content Start -->
+<section id="refine_content">
+  <div class="Refine_content_left">
+    <p class="Refine_Title">Beautiful Apartment in Downtown</p>
+    <div class="grid-container">
+      <div class="grid-item"><b>Location</b></div>
+      <div class="grid-item">New York</div>
+      <div class="grid-item"><b>Price</b></div>  
+      <div class="grid-item">$1,500/month</div>
+      <div class="grid-item"><b>Bedrooms</b></div>
+      <div class="grid-item">2</div>  
+      <div class="grid-item"><b>Contact</b></div>
+      <div class="grid-item">johndoe@email.com</div>
+      <div class="grid-item"><b>Availability</b></div> 
+      <div class="grid-item"><span>Available Now</span></div>   
+    </div>
+
+  </div>
+  <div class="Refine_content_Right">
+    <img src="images/Beautiful Apartment in Downtown.jpeg" alt="Paris" width="440" height="440">
+  </div>
+</section>
+ <!-- Refine Content end -->
+
+  <!-- testimonials Start -->
+  <section id="testimonials">
+    <div class="testimonial_content">
+    <div class="testimonial_image_bg">
+      <img src="images/moshiur.jpg" alt="Moshiur" width="100" height="100">
+    </div>
+    <h3 class="profile_name">Moshiur Rahman</h3>
+    <p class="testimonial_text">This apartment is in a great location and well-maintained. The rent is reasonable, and the landlord is responsive to maintenance requests.</p>
+    <div class="rating">
+      <div class="rating-item"><img src="images/Star red.svg" alt="rating"></div>
+      <div class="rating-item"><img src="images/Star red.svg" alt="rating"></div>
+      <div class="rating-item"><img src="images/Star red.svg" alt="rating"></div>
+      <div class="rating-item"><img src="images/Star red.svg" alt="rating"></div>
+      <div class="rating-item"><img src="images/Star gray.svg" alt="rating"></div>
+      </div>
+  </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="testimonial_content">
+    <div class="testimonial_image_bg">
+      <img src="images/Monica.jpg" alt="Monica" width="100" height="100">
+    </div>
+    <h3 class="profile_name">Monica</h3>
+    <p class="testimonial_text">This apartment is in a great location and well-maintained. The rent is reasonable, and the landlord is responsive to maintenance requests.</p>
+    <div class="rating">
+      <div class="rating-item"><img src="images/Star red.svg" alt="rating"></div>
+      <div class="rating-item"><img src="images/Star red.svg" alt="rating"></div>
+      <div class="rating-item"><img src="images/Star red.svg" alt="rating"></div>
+      <div class="rating-item"><img src="images/Star red.svg" alt="rating"></div>
+      <div class="rating-item"><img src="images/Star gray.svg" alt="rating"></div>
+      </div>
+  </div>
+  </section>
+
+  <!-- testimonials end -->
+  
+   <!--Frequently Asked Questions Starts here-->
+   <!-- Frequently Asked Questions Starts here -->
+<h2 class="faq_title">Frequently Asked Questions</h2>
+<section id="Frequently_Asked_Questions">
+
+  <div class="faq_content_left">
+
+    <div class="faq_content">
+      <p>How do I search for rental properties on your website?</p>
+    </div>
+
+    <div class="faq_content">
+      <p>Can property owners list their properties here?</p>
+    </div>
+
+    <div class="faq_content">
+      <p>How can I leave a review for a property I've rented?</p>
+    </div>
+
+  </div>
+
+  <div class="faq_content_right">
+    <div class="faq_answere">
+      <p>Searching for rental properties is easy! Simply use our search bar to enter your desired location, property type, and price range. Click 'Search,' and you'll find a list of properties that match your criteria.</p>
+    </div>
+  </div>
+</section>
+<!-- Frequently Asked Questions End -->
+
+<script>
+  // Get all FAQ content elements
+  const faqContents = document.querySelectorAll('.faq_content');
+  // Get the FAQ title element
+  const faqTitle = document.querySelector('.faq_title');
+  // Get the answer element
+  const faqAnswer = document.querySelector('.faq_answere');
+
+  // Define the corresponding answers for each FAQ
+  const answers = [
+    "Searching for rental properties is easy! Simply use our search bar to enter your desired location, property type, and price range. Click 'Search,' and you'll find a list of properties that match your criteria.",
+    "Yes, property owners can list their properties on our website. Simply sign up for an account and follow the instructions to list your property.",
+    "To leave a review for a property you've rented, navigate to the property listing page and scroll down to find the review section. Fill out the required information and submit your review."
+  ];
+
+  // Loop through each FAQ content element
+  faqContents.forEach((content, index) => {
+    // Add click event listener to each FAQ content
+    content.addEventListener('click', () => {
+      // Reset color of all FAQ contents to default
+      faqContents.forEach((c) => {
+        c.style.color = 'black'; // Reset color of all FAQ contents to black
+        c.style.borderBottom = 'none'; // Remove border bottom from all FAQ contents
+      });
+      // Change the color of the clicked FAQ content to red
+      content.style.color = '#d82e49';
+      // Add border bottom to the clicked content
+      content.style.borderBottom = '1px solid rgb(196, 1, 42)';
+      // Update the answer with the corresponding text
+      faqAnswer.innerHTML = `<p>${answers[index]}</p>`;
+    });
+  });
+</script>
+
+   <!-- Frequently Asked Questions End -->
+   
+
+  <!--Frequently Asked Questions End-->
+
+
+	<!-- Footer start -->
+  <section id="footer">
+    <div class="footerContainer">
+      <div class="footerlink">
+        <ul id="footerlink">
+          <li><a href="#TermsOfUse">Terms of Use</a></li>
+          <li><a href="#PrivacyPolicy">Privacy Policy</a></li>
+          <li><a href="#ContactUs">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="social-icons">
+        <a href="#" class="icon"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </section>
+  
+<!-- Footer end -->
+
+</body>
+
+</html>
